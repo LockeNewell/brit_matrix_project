@@ -1,14 +1,16 @@
 # Brit Matrix App
 
-## tl;dr
+## setup
 
 ```bash
-$ git clone ?????
+$ git clone git@github.com:LockeNewell/brit_matrix_project.git
 $ docker build -t brit_matrix_app .
 $ docker run -p 8000:8000 brit_matrix_app
 ```
 
 Now you can access the application at <http://127.0.0.1:8000>
+
+### tl;dr
 
 Bilingual Reading Intervention Targeting
 
@@ -32,10 +34,10 @@ Stack and version numbers used:
 $ tree -L 1 --dirsfirst
 .
 ├── config              # files needed for configuration
-├── webapp              # actual webapp
-├── docker-compose.yml  # docker-compose setup with container orchestration instructions
-├── LICENSE             # license for this project
-└── README.md           # this file
+├── brit_matrix_app     # actual webapp
+├── Dockerfile          # docker setup
+├── README.md           # this file
+└── requirement.txt     # docker required stuff for Django
 ```
 
 ## Setting up
