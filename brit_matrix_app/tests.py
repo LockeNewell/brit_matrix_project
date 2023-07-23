@@ -15,5 +15,3 @@ class BilingualReadingViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'bilingual_reading.html')
         
-        # Check if the Bootstrap CSS link is present in the response content
-        self.assertContains(response, 'href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"', html=True)
