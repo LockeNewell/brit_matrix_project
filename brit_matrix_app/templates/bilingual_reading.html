@@ -53,7 +53,36 @@
                 </button>
               </div>
 
-              <div class="p-2">
+              <div
+                class="p-2"
+                id="language_proficiency_panel">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Language Proficiency</h5>
+                  </div>
+                  <div class="card-body">
+                    <div>academic vocabulary measure or state assessment</div>
+                    <label for="language_proficiency_L1">L1:</label>
+                    <select id="language_proficiency_L1">
+                      <option value="default">Select L1</option>
+                      <option value="advanced">advanced</option>
+                      <option value="intermediate">intermediate</option>
+                      <option value="beginner">beginner</option>
+                    </select>
+
+                    <label for="language_proficiency_L2">L2:</label>
+                    <select id="language_proficiency_L2">
+                      <option value="default">Select L2</option>
+                      <option value="advanced">advanced</option>
+                      <option value="intermediate">intermediate</option>
+                      <option value="beginner">beginner</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="p-2 d-none"
+                id="reading_connected_text_panel">
                 <div class="card">
                   <div class="card-header">
                     <h5>Reading Connected Text</h5>
@@ -136,7 +165,7 @@
               </div>
 
               <div
-                class="p-2 d-none"
+                class="p-2"
                 id="phonemic_awareness_panel">
                 <div class="card">
                   <div class="card-header">
@@ -162,63 +191,11 @@
                   </div>
                 </div>
               </div>
-
-              <div
-                class="p-2 d-none"
-                id="language_proficiency_panel">
-                <div class="card">
-                  <div class="card-header">
-                    <h5>Language Proficiency</h5>
-                  </div>
-                  <div class="card-body">
-                    <div>academic vocabulary measure or state assessment</div>
-                    <label for="language_proficiency_L1">L1:</label>
-                    <select id="language_proficiency_L1">
-                      <option value="default">Select L1</option>
-                      <option value="advanced">advanced</option>
-                      <option value="intermediate">intermediate</option>
-                      <option value="beginner">beginner</option>
-                    </select>
-
-                    <label for="language_proficiency_L2">L2:</label>
-                    <select id="language_proficiency_L2">
-                      <option value="default">Select L2</option>
-                      <option value="advanced">advanced</option>
-                      <option value="intermediate">intermediate</option>
-                      <option value="beginner">beginner</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="p-2 flex-grow-1 flex-column">
               <div class="p-2 flex-column justify-content-around">
                 <h3>Reading Intervention Recommendation</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                  consequuntur voluptatum laborum numquam blanditiis harum
-                  quisquam eius sed odit fugiat iusto fuga praesentium optio,
-                  eaque rerum! Provident similique accusantium nemo autem.
-                  Veritatis obcaecati tenetur iure eius earum ut molestias
-                  architecto voluptate aliquam nihil, eveniet aliquid culpa
-                  officia aut! Impedit sit sunt quaerat, odit, tenetur error,
-                  harum nesciunt ipsum debitis quas aliquid.
-                </p>
-              </div>
-              <div class="p-2 flex-column">
-                <h3>Phonemic Awareness Intervention Recommendation</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maxime mollitia, molestiae quas vel sint commodi repudiandae
-                  consequuntur voluptatum laborum numquam blanditiis harum
-                  quisquam eius sed odit fugiat iusto fuga praesentium optio,
-                  eaque rerum! Provident similique accusantium nemo autem.
-                  Veritatis obcaecati tenetur iure eius earum ut molestias
-                  architecto voluptate aliquam nihil, eveniet aliquid culpa
-                  officia aut! Impedit sit sunt quaerat, odit, tenetur error,
-                  harum nesciunt ipsum debitis quas aliquid.
-                </p>
+                <div id="result"></div>
               </div>
             </div>
           </div>
