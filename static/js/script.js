@@ -30,16 +30,33 @@ function clearRecommendation() {
 
 // Function to reset all options to default
 function resetDropdowns() {
-  const dropdowns = form.querySelectorAll('[id$="L1"], [id$="L2"]');
-  dropdowns.forEach((dropdown) => {
-    dropdown.value = 'default';
-  });
+  resetLanguageProficiencyDropdowns();
+  resetPhonemicAwarenessDropdowns();
+  resetReadingConnectedTextDropdowns();
   reading_connected_text_panel.classList.add('d-none');
   reading_words_panel.classList.add('d-none');
   decoding_panel.classList.add('d-none');
 
   submitButton.disabled = true;
   clearRecommendation();
+}
+
+function resetLanguageProficiencyDropdowns() {
+  language_proficiency_L1.value = 'default';
+  language_proficiency_L2.value = 'default';
+  resetReadingWordsDropdowns();
+}
+
+function resetPhonemicAwarenessDropdowns() {
+  phonemic_awareness_L1.value = 'default';
+  phonemic_awareness_L2.value = 'default';
+  resetReadingWordsDropdowns();
+}
+
+function resetReadingConnectedTextDropdowns() {
+  reading_connected_text_L1.value = 'default';
+  reading_connected_text_L2.value = 'default';
+  resetReadingWordsDropdowns();
 }
 
 function resetReadingConnectedTextDropdowns() {
