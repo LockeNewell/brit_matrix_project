@@ -35,31 +35,185 @@
         <form
           method="post"
           id="myForm">
-          <label for="dropdownL1">L1:</label>
-          <select id="dropdownL1">
-            <option value="default">Select L1</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-          </select>
+          <div class="d-flex">
+            <div
+              class="p-2 d-flex flex-column"
+              style="min-width: 500px">
+              <div class="p-2 d-flex justify-content-around">
+                <button
+                  type="button"
+                  id="clearButton">
+                  Clear
+                </button>
+                <button
+                  type="submit"
+                  id="submitButton"
+                  disabled>
+                  Submit
+                </button>
+              </div>
 
-          <label for="dropdownL2">L2:</label>
-          <select id="dropdownL2">
-            <option value="default">Select L2</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-          </select>
+              <div class="p-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Reading Connected Text</h5>
+                  </div>
+                  <div class="card-body">
+                    <div>grade-level connected text fluency</div>
+                    <label for="reading_connected_text_L1">L1:</label>
+                    <select id="reading_connected_text_L1">
+                      <option value="default">Select L1</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
 
-          <button
-            type="button"
-            id="clearButton">
-            Clear
-          </button>
-          <button
-            type="submit"
-            id="submitButton"
-            disabled>
-            Submit
-          </button>
+                    <label for="reading_connected_text_L2">L2:</label>
+                    <select id="reading_connected_text_L2">
+                      <option value="default">Select L2</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Reading Words</h5>
+                  </div>
+                  <div class="card-body">
+                    <div>grade-level word lists</div>
+                    <label for="reading_words_L1">L1:</label>
+                    <select id="reading_words_L1">
+                      <option value="default">Select L1</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
+
+                    <label for="reading_words_L2">L2:</label>
+                    <select id="reading_words_L2">
+                      <option value="default">Select L2</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Decoding</h5>
+                  </div>
+                  <div class="card-body">
+                    <div>nonsense word / syllable / letter-sound fluency</div>
+                    <label for="decoding_L1">L1:</label>
+                    <select id="decoding_L1">
+                      <option value="default">Select L1</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
+
+                    <label for="decoding_L2">L2:</label>
+                    <select id="decoding_L2">
+                      <option value="default">Select L2</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Phonemic Awareness</h5>
+                  </div>
+                  <div class="card-body">
+                    <div>segmenting / blending fluency</div>
+                    <label for="phonemic_awareness_L1">L1:</label>
+                    <select id="phonemic_awareness_L1">
+                      <option value="default">Select L1</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
+
+                    <label for="phonemic_awareness_L2">L2:</label>
+                    <select id="phonemic_awareness_L2">
+                      <option value="default">Select L2</option>
+                      <option value="fluent_accurate">fluent & accurate</option>
+                      <option value="accurate">accurate</option>
+                      <option value="not_accurate">not accurate</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-2">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Language Proficiency</h5>
+                  </div>
+                  <div class="card-body">
+                    <div>academic vocabulary measure or state assessment</div>
+                    <label for="language_proficiency_L1">L1:</label>
+                    <select id="language_proficiency_L1">
+                      <option value="default">Select L1</option>
+                      <option value="advanced">advanced</option>
+                      <option value="intermediate">intermediate</option>
+                      <option value="beginner">beginner</option>
+                    </select>
+
+                    <label for="language_proficiency_L2">L2:</label>
+                    <select id="language_proficiency_L2">
+                      <option value="default">Select L2</option>
+                      <option value="advanced">advanced</option>
+                      <option value="intermediate">intermediate</option>
+                      <option value="beginner">beginner</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 flex-grow-1 flex-column">
+              <div class="p-2 flex-column justify-content-around">
+                <h3>Reading Intervention Recommendation</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maxime mollitia, molestiae quas vel sint commodi repudiandae
+                  consequuntur voluptatum laborum numquam blanditiis harum
+                  quisquam eius sed odit fugiat iusto fuga praesentium optio,
+                  eaque rerum! Provident similique accusantium nemo autem.
+                  Veritatis obcaecati tenetur iure eius earum ut molestias
+                  architecto voluptate aliquam nihil, eveniet aliquid culpa
+                  officia aut! Impedit sit sunt quaerat, odit, tenetur error,
+                  harum nesciunt ipsum debitis quas aliquid.
+                </p>
+              </div>
+              <div class="p-2 flex-column">
+                <h3>Phonemic Awareness Intervention Recommendation</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maxime mollitia, molestiae quas vel sint commodi repudiandae
+                  consequuntur voluptatum laborum numquam blanditiis harum
+                  quisquam eius sed odit fugiat iusto fuga praesentium optio,
+                  eaque rerum! Provident similique accusantium nemo autem.
+                  Veritatis obcaecati tenetur iure eius earum ut molestias
+                  architecto voluptate aliquam nihil, eveniet aliquid culpa
+                  officia aut! Impedit sit sunt quaerat, odit, tenetur error,
+                  harum nesciunt ipsum debitis quas aliquid.
+                </p>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
       <div class="card">
