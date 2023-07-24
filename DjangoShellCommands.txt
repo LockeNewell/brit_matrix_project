@@ -1,0 +1,12 @@
+import csv
+from brit_matrix_app.models import RecommendationModel
+
+with open('/Users/lockenewell/git/brit_matrix_project/BRIT_matrix_web.csv', 'r') as f:
+  reader = csv.reader(f)
+  next(reader)
+  for row in reader:
+    _, created = RecommendationModel.objects.get_or_create(
+      code=row[0],
+      recommendation=row[1],
+    )
+ 

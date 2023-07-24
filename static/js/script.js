@@ -1,5 +1,6 @@
 // Get the form elements and the submit button
-const result = document.getElementById('result');
+const reading_intervention_recommendation = document.getElementById('reading_intervention_recommendation');
+const phonemic_awareness_intervention_recommendation = document.getElementById('phonemic_awareness_intervention_recommendation');
 const form = document.getElementById('myForm');
 const clearButton = document.getElementById('clearButton');
 const submitButton = document.getElementById('submitButton');
@@ -21,7 +22,11 @@ const phonemic_awareness_L1 = document.getElementById('phonemic_awareness_L1');
 const phonemic_awareness_L2 = document.getElementById('phonemic_awareness_L2');
 
 
-// const dropdownL2 = document.getElementById('id_l2_choice');
+function clearRecommendation() {
+  reading_intervention_recommendation.innerText = '';
+  phonemic_awareness_intervention_recommendation.innerText = '';
+
+}
 
 // Function to reset all options to default
 function resetDropdowns() {
@@ -34,7 +39,7 @@ function resetDropdowns() {
   decoding_panel.classList.add('d-none');
 
   submitButton.disabled = true;
-  result.innerText = '';
+  clearRecommendation();
 }
 
 function resetReadingConnectedTextDropdowns() {
@@ -56,7 +61,7 @@ function resetDecodingDropdowns() {
 
 // Event listener for dropdown changes
 function onLanguageProficiencyChange() {
-  result.innerText = '';
+  clearRecommendation();
   if (language_proficiency_L1.value !== 'default' && language_proficiency_L2.value !== 'default') {
     reading_connected_text_panel.classList.remove('d-none');
   } else {
@@ -66,7 +71,7 @@ function onLanguageProficiencyChange() {
   }
 }
 function onReadingConnectedTextChange() {
-  result.innerText = '';
+  clearRecommendation();
   if (reading_connected_text_L1.value !== 'default' && reading_connected_text_L2.value !== 'default') {
     if (reading_connected_text_L1.value === 'not_accurate' && reading_connected_text_L2.value === 'not_accurate') {
       submitButton.disabled = true;
@@ -87,7 +92,7 @@ function onReadingConnectedTextChange() {
   }
 }
 function onReadingWordsChange() {
-  result.innerText = '';
+  clearRecommendation();
   if (reading_words_L1.value !== 'default' && reading_words_L2.value !== 'default') {
     if (reading_words_L1.value === 'not_accurate' && reading_words_L2.value === 'not_accurate') {
       submitButton.disabled = true;
@@ -103,7 +108,7 @@ function onReadingWordsChange() {
   }
 }
 function onDecodingChange() {
-  result.innerText = '';
+  clearRecommendation();
   if (decoding_L1.value !== 'default' && decoding_L2.value !== 'default') {
     submitButton.disabled = false;
   } else {
@@ -111,7 +116,7 @@ function onDecodingChange() {
   }
 }
 function onPhonemicAwarenessChange() {
-  result.innerText = '';
+  clearRecommendation();
 }
 
 // Event listener for the clear button
@@ -151,7 +156,8 @@ submitButton.addEventListener('click', (event) => {
   })
     .then(response => response.json())
     .then(data => {
-      document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+      document.getElementById('reading_intervention_recommendation').innerText = data.reading_intervention_recommendation;
+      document.getElementById('phonemic_awareness_intervention_recommendation').innerText = data.phonemic_awareness_intervention_recommendation;
     })
     .catch(error => {
       console.error('Error:', error);
