@@ -32,174 +32,170 @@
         </div>
       </div>
       <div class="container">
-        <form
-          method="post"
-          id="myForm">
-          <div class="d-flex">
+        <div class="d-flex">
+          <div
+            class="p-2 d-flex flex-column"
+            style="min-width: 500px">
+            <input
+              type="hidden"
+              name="csrfmiddlewaretoken"
+              value="{{ csrf_token }}" />
+            <div class="p-2 d-flex justify-content-around">
+              <button
+                type="button"
+                id="clearButton">
+                Clear
+              </button>
+              <button
+                type="button"
+                id="submitButton"
+                disabled>
+                Submit
+              </button>
+            </div>
             <div
-              class="p-2 d-flex flex-column"
-              style="min-width: 500px">
-              <div class="p-2 d-flex justify-content-around">
-                <button
-                  type="button"
-                  id="clearButton">
-                  Clear
-                </button>
-                <button
-                  type="submit"
-                  id="submitButton"
-                  disabled>
-                  Submit
-                </button>
-              </div>
-
-              <div
-                class="p-2"
-                id="language_proficiency_panel">
-                <div class="card">
-                  <div class="card-header">
-                    <h5>Language Proficiency</h5>
-                  </div>
-                  <div class="card-body">
-                    <div>academic vocabulary measure or state assessment</div>
-                    <label for="language_proficiency_L1">L1:</label>
-                    <select id="language_proficiency_L1">
-                      <option value="default">Select L1</option>
-                      <option value="advanced">advanced</option>
-                      <option value="intermediate">intermediate</option>
-                      <option value="beginner">beginner</option>
-                    </select>
-
-                    <label for="language_proficiency_L2">L2:</label>
-                    <select id="language_proficiency_L2">
-                      <option value="default">Select L2</option>
-                      <option value="advanced">advanced</option>
-                      <option value="intermediate">intermediate</option>
-                      <option value="beginner">beginner</option>
-                    </select>
-                  </div>
+              class="p-2"
+              id="language_proficiency_panel">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Language Proficiency</h5>
                 </div>
-              </div>
-              <div
-                class="p-2 d-none"
-                id="reading_connected_text_panel">
-                <div class="card">
-                  <div class="card-header">
-                    <h5>Reading Connected Text</h5>
-                  </div>
-                  <div class="card-body">
-                    <div>grade-level connected text fluency</div>
-                    <label for="reading_connected_text_L1">L1:</label>
-                    <select id="reading_connected_text_L1">
-                      <option value="default">Select L1</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
+                <div class="card-body">
+                  <div>academic vocabulary measure or state assessment</div>
+                  <label for="language_proficiency_L1">L1:</label>
+                  <select id="language_proficiency_L1">
+                    <option value="default">Select L1</option>
+                    <option value="advanced">advanced</option>
+                    <option value="intermediate">intermediate</option>
+                    <option value="beginner">beginner</option>
+                  </select>
 
-                    <label for="reading_connected_text_L2">L2:</label>
-                    <select id="reading_connected_text_L2">
-                      <option value="default">Select L2</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="p-2 d-none"
-                id="reading_words_panel">
-                <div class="card">
-                  <div class="card-header">
-                    <h5>Reading Words</h5>
-                  </div>
-                  <div class="card-body">
-                    <div>grade-level word lists</div>
-                    <label for="reading_words_L1">L1:</label>
-                    <select id="reading_words_L1">
-                      <option value="default">Select L1</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
-
-                    <label for="reading_words_L2">L2:</label>
-                    <select id="reading_words_L2">
-                      <option value="default">Select L2</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="p-2 d-none"
-                id="decoding_panel">
-                <div class="card">
-                  <div class="card-header">
-                    <h5>Decoding</h5>
-                  </div>
-                  <div class="card-body">
-                    <div>nonsense word / syllable / letter-sound fluency</div>
-                    <label for="decoding_L1">L1:</label>
-                    <select id="decoding_L1">
-                      <option value="default">Select L1</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
-
-                    <label for="decoding_L2">L2:</label>
-                    <select id="decoding_L2">
-                      <option value="default">Select L2</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="p-2"
-                id="phonemic_awareness_panel">
-                <div class="card">
-                  <div class="card-header">
-                    <h5>Phonemic Awareness</h5>
-                  </div>
-                  <div class="card-body">
-                    <div>segmenting / blending fluency</div>
-                    <label for="phonemic_awareness_L1">L1:</label>
-                    <select id="phonemic_awareness_L1">
-                      <option value="default">Select L1</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
-
-                    <label for="phonemic_awareness_L2">L2:</label>
-                    <select id="phonemic_awareness_L2">
-                      <option value="default">Select L2</option>
-                      <option value="fluent_accurate">fluent & accurate</option>
-                      <option value="accurate">accurate</option>
-                      <option value="not_accurate">not accurate</option>
-                    </select>
-                  </div>
+                  <label for="language_proficiency_L2">L2:</label>
+                  <select id="language_proficiency_L2">
+                    <option value="default">Select L2</option>
+                    <option value="advanced">advanced</option>
+                    <option value="intermediate">intermediate</option>
+                    <option value="beginner">beginner</option>
+                  </select>
                 </div>
               </div>
             </div>
-            <div class="p-2 flex-grow-1 flex-column">
-              <div class="p-2 flex-column justify-content-around">
-                <h3>Reading Intervention Recommendation</h3>
-                <div id="result"></div>
+            <div
+              class="p-2 d-none"
+              id="reading_connected_text_panel">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Reading Connected Text</h5>
+                </div>
+                <div class="card-body">
+                  <div>grade-level connected text fluency</div>
+                  <label for="reading_connected_text_L1">L1:</label>
+                  <select id="reading_connected_text_L1">
+                    <option value="default">Select L1</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+
+                  <label for="reading_connected_text_L2">L2:</label>
+                  <select id="reading_connected_text_L2">
+                    <option value="default">Select L2</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-2 d-none"
+              id="reading_words_panel">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Reading Words</h5>
+                </div>
+                <div class="card-body">
+                  <div>grade-level word lists</div>
+                  <label for="reading_words_L1">L1:</label>
+                  <select id="reading_words_L1">
+                    <option value="default">Select L1</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+
+                  <label for="reading_words_L2">L2:</label>
+                  <select id="reading_words_L2">
+                    <option value="default">Select L2</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-2 d-none"
+              id="decoding_panel">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Decoding</h5>
+                </div>
+                <div class="card-body">
+                  <div>nonsense word / syllable / letter-sound fluency</div>
+                  <label for="decoding_L1">L1:</label>
+                  <select id="decoding_L1">
+                    <option value="default">Select L1</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+
+                  <label for="decoding_L2">L2:</label>
+                  <select id="decoding_L2">
+                    <option value="default">Select L2</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div
+              class="p-2"
+              id="phonemic_awareness_panel">
+              <div class="card">
+                <div class="card-header">
+                  <h5>Phonemic Awareness</h5>
+                </div>
+                <div class="card-body">
+                  <div>segmenting / blending fluency</div>
+                  <label for="phonemic_awareness_L1">L1:</label>
+                  <select id="phonemic_awareness_L1">
+                    <option value="default">Select L1</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+
+                  <label for="phonemic_awareness_L2">L2:</label>
+                  <select id="phonemic_awareness_L2">
+                    <option value="default">Select L2</option>
+                    <option value="fluent_accurate">fluent & accurate</option>
+                    <option value="accurate">accurate</option>
+                    <option value="not_accurate">not accurate</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
-        </form>
+          <div class="p-2 flex-grow-1 flex-column">
+            <div class="p-2 flex-column justify-content-around">
+              <h3>Reading Intervention Recommendation</h3>
+              <div id="result"></div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="card">
         <div class="card-header"><h5>A Few Questions and Answers</h5></div>

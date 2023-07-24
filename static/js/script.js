@@ -3,6 +3,7 @@ const result = document.getElementById('result');
 const form = document.getElementById('myForm');
 const clearButton = document.getElementById('clearButton');
 const submitButton = document.getElementById('submitButton');
+const csrf_middleware_token = document.querySelector('[name=csrfmiddlewaretoken]')
 const language_proficiency_panel = document.getElementById('language_proficiency_panel');
 const language_proficiency_L1 = document.getElementById('language_proficiency_L1');
 const language_proficiency_L2 = document.getElementById('language_proficiency_L2');
@@ -118,6 +119,44 @@ clearButton.addEventListener('click', function () {
   // Reset the dropdown to the default option
   resetDropdowns();
 });
+
+submitButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  const formData = new FormData();
+
+  formData.append('csrfmiddlewaretoken', csrf_middleware_token.value);
+  formData.append('language_proficiency_L1', language_proficiency_L1.value);
+  formData.append('language_proficiency_L2', language_proficiency_L2.value);
+  formData.append('reading_connected_text_L1', reading_connected_text_L1.value);
+  formData.append('reading_connected_text_L2', reading_connected_text_L2.value);
+  formData.append('reading_words_L1', reading_words_L1.value);
+  formData.append('reading_words_L2', reading_words_L2.value);
+  formData.append('decoding_L1', decoding_L1.value);
+  formData.append('decoding_L2', decoding_L2.value);
+  formData.append('phonemic_awareness_L1', phonemic_awareness_L1.value);
+  formData.append('phonemic_awareness_L2', phonemic_awareness_L2.value);
+
+  console.log('language_proficiency_L1:', language_proficiency_L1.value);
+  for (var [ key, value ] of formData.entries()) {
+    console.log(key, value);
+  }
+
+  fetch('formResponse/', {
+    method: 'POST',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest',
+      'X-CSRFToken': csrf_middleware_token.value,
+    },
+    body: formData,
+  })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+})
 
 
 // Event listener for dropdowns
