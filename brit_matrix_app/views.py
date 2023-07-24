@@ -70,7 +70,7 @@ def formResponse(request):
                 if isSet([request.POST.get('phonemic_awareness_L1'),request.POST.get('phonemic_awareness_L2')]):
                     phonemic_awareness_intervention_recommendation = RecommendationModel.objects.get(code=pa_code).recommendation
                 else:
-                    phonemic_awareness_intervention_recommendation = 'Phonemic Awareness values were not set'
+                    phonemic_awareness_intervention_recommendation = 'Phonemic Awareness results were not entered'
             except ObjectDoesNotExist:
                 return HttpResponseBadRequest("Query did not match any object in the database")
             
