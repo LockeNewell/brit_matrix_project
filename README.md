@@ -4,8 +4,7 @@
 
 ```bash
 $ git clone git@github.com:LockeNewell/brit_matrix_project.git
-$ docker build -t brit_matrix_app .
-$ docker-compose up -d
+$ python3 manage.py runserver
 ```
 
 this was an app Dr Newell needed me to create for her upcoming conference. as it felt like what was discussed in my interviews I thought it would be a great chance to show my ability.
