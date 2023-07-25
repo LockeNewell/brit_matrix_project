@@ -5,8 +5,12 @@
 ```bash
 $ git clone git@github.com:LockeNewell/brit_matrix_project.git
 $ docker build -t brit_matrix_app .
-$ docker run -p 8000:8000 brit_matrix_app
+$ docker-compose up -d
 ```
+
+this was an app Dr Newell needed me to create for her upcoming conference. as it felt like what was discussed in my interviews I thought it would be a great chance to show my ability.
+
+I had high goals with this project and will have to continue even after the ETI team has looked at this as this will be used IRL.
 
 Now you can access the application at <http://127.0.0.1:8000>
 
