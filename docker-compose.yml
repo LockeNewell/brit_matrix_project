@@ -5,9 +5,4 @@ services:
     build: .
     ports:
       - "8000:8000"
-    environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-    depends_on:
-      - db
 
